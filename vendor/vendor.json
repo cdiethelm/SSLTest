@@ -1,8 +1,0 @@
-{
-    "rootPath": "github.com/cdiethelm/SSLTest",
-    "heroku": {
-        
-        "goVersion": "go1.11"
-    }
-
-}
