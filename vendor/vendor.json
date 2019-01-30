@@ -1,7 +1,7 @@
 {
     "rootPath": "github.com/cdiethelm/SSLTest",
     "heroku": {
-        "install" : [ "golang.org/x/crypto/acme/autocert" ],
+        //"install" : [ "golang.org/x/crypto/acme/autocert" ],
         "goVersion": "go1.11"
     }
 
