@@ -1,1 +1,1 @@
-module golang.org/x/crypto/acme/autocert
+require golang.org/x/crypto/acme/autocert
