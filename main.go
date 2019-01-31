@@ -1,11 +1,8 @@
 package main
 
 import (
-	"crypto/tls"
 	"fmt"
 	"net/http"
-
-	"golang.org/x/crypto/acme/autocert"
 )
 
 func main() {
@@ -14,19 +11,22 @@ func main() {
 		fmt.Fprintf(w, "Hello Secure World")
 	})
 
-	certManager := autocert.Manager{
-		Prompt: autocert.AcceptTOS,
-		Cache:  autocert.DirCache("certs"),
-	}
+	/*
+		certManager := autocert.Manager{
+			Prompt: autocert.AcceptTOS,
+			Cache:  autocert.DirCache("certs"),
+		}
 
-	server := &http.Server{
-		Addr:    ":443",
-		Handler: mux,
-		TLSConfig: &tls.Config{
-			GetCertificate: certManager.GetCertificate,
-		},
-	}
+		server := &http.Server{
+			Addr:    ":443",
+			Handler: mux,
+			TLSConfig: &tls.Config{
+				GetCertificate: certManager.GetCertificate,
+			},
+		}
 
-	go http.ListenAndServe(":80", certManager.HTTPHandler(nil))
-	server.ListenAndServeTLS("", "")
+		go http.ListenAndServe(":80", certManager.HTTPHandler(nil))
+		server.ListenAndServeTLS("", "")
+	*/
+	http.ListenAndServe(":8080", mux)
 }
